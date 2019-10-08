@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="script/jquery.js"></script>
+	<script type="text/javascript" src="script/jquery-form.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#myForm").ajaxForm({
+				target: '#resultado',
+				success: function() {
+					//$("#resultado").php();
+					$("#myForm").resetForm();
+				}
+			});
+		})
+	</script>
+
+</head>
+<body>
+	<div id="resultado">Nada</div>
+	<form id="myForm" action="processa-form.php" method="POST"> 
+    Name: <input type="text" name="name" /> 
+    Comment: <textarea name="comment"></textarea> 
+    <input type="submit" value="Submit Comment" /> 
+</form>
+
+</body>
+</html>
